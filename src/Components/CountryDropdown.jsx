@@ -6,7 +6,7 @@ import { MdClose } from 'react-icons/md';
 import React, { useEffect, useState } from 'react';
 import Slide from '@mui/material/Slide';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries } from '../../redux/countryAction';
+import { getCountries } from '../redux/countryAction';
 
 const Transition = React.forwardRef(function Transition(
     props,
