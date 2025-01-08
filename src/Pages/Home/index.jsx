@@ -1,5 +1,10 @@
+import HomeBanner from "../HomeBanner";
+
+
 const Home = () => {
-    return <></>
+    return <>
+        <HomeBanner/>
+    </>
 }
 
 export default Home;

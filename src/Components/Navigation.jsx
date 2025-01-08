@@ -5,7 +5,7 @@ import { IoIosMenu } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const Navigation = props => {
-    const [isOpenSidebarNav,setIsOpenSidebarNav] = useState(true);
+    const [isOpenSidebarNav,setIsOpenSidebarNav] = useState(false);
 
     return <nav>
         <div className='container'>

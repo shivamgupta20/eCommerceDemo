@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
 * {
   margin: 0px;
   padding: 0px;
@@ -229,13 +230,14 @@ nav .navpart1 .catWrapper .sidebarNav {
   opacity: 0;
 
   transition: all0.2s;
-  /* background: #fff; */
+  background: #fff;
   position: absolute;
   top: 136%;
   left: 0px;
   /* border: 1px solid rgba(0, 0, 0, 0.1); */
   padding: 15px 0px;
   visibility: hidden;
+  z-index: 2;
 }
 
 nav .navpart1 .catWrapper .sidebarNav.open {
@@ -344,12 +346,14 @@ nav .navpart2 li .submenu {
   opacity: 0;
   visibility: hidden;
   transition: all 0.1s ease-in-out;
+  z-index: 2;
 }
 
 nav .navpart2 li:hover .submenu {
   opacity: 1;
   visibility: inherit;
   top: 100%;
+  z-index: 2 ;
 }
 
 nav .navpart2 li .submenu a {
@@ -366,4 +370,32 @@ nav .navpart2 li .submenu a button {
 
 nav .navpart2 li .submenu a button:hover {
   background: #f1f1f1;
+}
+
+.homeBannerSection{
+  position: relative;
+  overflow: hidden;
+}
+.homeBannerSection *{
+  outline: none;
+}
+.homeBannerSection .slick-arrow{
+  position: absolute;
+  top: 45%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #444444;
+  border-radius: 50%;
+}
+
+.homeBannerSection  .slick-next {
+  right:25px !important;
+
+}
+.homeBannerSection  .slick-prev {
+  left: 25px !important;;
 }
