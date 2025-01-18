@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -8,6 +9,16 @@
 
 body {
   font-family: "Montserrat", serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+}
+
+.text-light {
+  color: #8b8b8b !important;
+}
+
+.text-sml {
   font-size: 14px;
 }
 
@@ -23,6 +34,10 @@ body {
   .container-xl {
     max-width: 1200px;
   }
+}
+
+.cursor {
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -241,8 +256,8 @@ nav .navpart1 .catWrapper .sidebarNav {
 }
 
 nav .navpart1 .catWrapper .sidebarNav.open {
-  height: auto!important;
-  opacity: 1!important;
+  height: auto !important;
+  opacity: 1 !important;
   visibility: inherit;
 
 }
@@ -251,7 +266,7 @@ nav .navpart1 .catWrapper .sidebarNav li {
   width: 100%;
   list-style: none;
   padding: 0 10px;
-
+  /* position: relative; */
 }
 
 nav .navpart1 .catWrapper .sidebarNav li button {
@@ -264,6 +279,41 @@ nav .navpart1 .catWrapper .sidebarNav li button {
 nav .navpart1 .catWrapper .sidebarNav li button:hover {
   background: transparent;
 
+}
+
+nav .navpart1 .catWrapper .sidebarNav ul li {
+  position: static;
+
+}
+
+nav .navpart1 .catWrapper .sidebarNav ul li .submenu {
+  position: absolute;
+  top: 0;
+  left: 102%;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+nav .navpart1 .catWrapper .sidebarNav ul li .submenu button {
+  border-radius: 0px;
+}
+
+nav .navpart1 .catWrapper .sidebarNav ul li:hover .submenu {
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+}
+
+nav .navpart1 .catWrapper .sidebarNav ul li button svg {
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 nav .navpart2 {
@@ -353,7 +403,7 @@ nav .navpart2 li:hover .submenu {
   opacity: 1;
   visibility: inherit;
   top: 100%;
-  z-index: 2 ;
+  z-index: 2;
 }
 
 nav .navpart2 li .submenu a {
@@ -372,14 +422,16 @@ nav .navpart2 li .submenu a button:hover {
   background: #f1f1f1;
 }
 
-.homeBannerSection{
+.homeBannerSection {
   position: relative;
   overflow: hidden;
 }
-.homeBannerSection *{
+
+.homeBannerSection * {
   outline: none;
 }
-.homeBannerSection .slick-arrow{
+
+.homeBannerSection .slick-arrow {
   position: absolute;
   top: 45%;
   z-index: 2;
@@ -389,13 +441,347 @@ nav .navpart2 li .submenu a button:hover {
   width: 40px;
   height: 40px;
   background: #444444;
+  border-radius: 100%;
+  font-family: FontAwesome ;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 12%); 
+}
+
+.homeBannerSection .slick-next {
+  right: 25px !important;
+
+}
+
+.homeBannerSection .slick-prev {
+  left: 25px !important;
+  ;
+}
+
+.homeProducts {
+  padding: 25px 0;
+  width: 100%;
+}
+
+.homeProducts .banner {
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.hd {
+  font-size: 20euserserewpx;
+  font-weight: 600;
+text-transform: capitalize;
+}
+
+.viewAllBtn {
+  padding: 5px 25px !important;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+
+  
+  border-radius: 30px !important;
+  color: #414141 !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+}
+
+.viewAllBtn svg {
+  font-size: 20px;
+
+}
+
+.productItem{
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.productItem .badge{
+  display: inline-block;
+  padding: 7px 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+.productItem .info{
+  padding: 15px;
+  cursor: pointer;
+}
+.productItem .info .oldPrice{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.2);
+text-decoration: line-through;
+}
+.productItem .info .newPrice{
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+.productItem h4{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.product_row .item{
+  border-right: 1px solid transparent;
+}
+
+.product_row .swiper-slide:last-child .productItem{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.swiper{
+  padding-right: 1px;
+}
+
+.badge-primary{
+  background: #2bbefa;
+}
+
+.productItem .actions {
+   position: absolute;
+   top: 20px;
+   right: 10px;
+   z-index: 2;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.productItem .actions button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.0s ease-in-out;
+}
+
+.productItem .imgWrapper{
+  overflow: hidden;
+}
+.productItem .imgWrapper img{
+  transition: all 0.3s ease-in-out;;
+}
+
+.productItem .imgWrapper:hover img{
+  transform: scale(1.1);
+}
+
+.imgWrapper .imgWrapper:hover .actions{
+  opacity: 1;
+  right:10px;
+
+}
+.productItem .actions button svg{
+  color: #000;
+  opacity: 0.8;
+  pointer-events: none;
+  font-size: 14px;
+
+}
+.productItem .actions button:hover{
+  background: #233a95;
+}
+.productItem .actions button:hover svg{
+  color: #fff;
+}
+.homeCat{
+  padding: 35px 0;
+}
+.homeCat .swiper{
+  overflow: inherit;
+}
+.homeCat .swiper .item{
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  background: #f4f1f0;
+  border-radius: 10px;
+}
+.homeCat .swiper .item h6{
+  font-size: 14px;
+}
+.homeCat .swiper .img{
+  width: 80%;
+}
+
+.homeCat .swiper-button-prev, .homeCat .swiper-button-next {
+  top: -30px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
+.homeCat .swiper-button-prev{
+  right: 68px;
+  left: inherit;
+}
+.homeCat .swiper-button-prev:after, .homeCat .swiper-button-next:after{
+  font-size: 11px;
 
-.homeBannerSection  .slick-next {
-  right:25px !important;
 
 }
-.homeBannerSection  .slick-prev {
-  left: 25px !important;;
+
+.productRow2{
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.productRow2 .productItem{
+  width: 23%;
+  overflow-x: hidden;
+  border-right: rgba(0, 0, 0, 0.1);
+}
+
+.bannerSec{
+  gap: 15px;
+}
+
+.sticky{
+  position: sticky;
+  top:10px;
+  z-index: 2;
+}
+
+.newsLetterSection{
+  width: 100%;
+  height: 400px;
+  background: #233a95;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  padding:70px 0px;
+}
+
+
+.newsLetterSection p{
+  font-size: 18px; 
+  margin: 10px 0px;
+}
+.newsLetterSection h3{
+  font-size: 30x;
+  font-weight: bold;
+}
+.newsLetterSection p .text-light{
+  color: #fff;
+  opacity: 0.5;
+  font-size: 14px;
+}
+.newsLetterSection .col-md-6{
+  position: static!important;
+}
+.newsLetterSection img{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.newsLetterSection form{
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  padding: 10px;
+  position: relative; 
+  border-radius: 5px;
+}
+.newsLetterSection form svg{
+  position: absolute;
+  top: 15px;
+  left:10px;
+  font-size: 25px;
+  opacity: 0.3;
+}
+.newsLetterSection form input{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  outline: none;
+  border: 0px;
+  padding-left: 40px;
+  padding-right: 200px;
+}
+
+.newsLetterSection form button{
+  position: absolute;
+  top:6px;
+  right: 7px;
+  background: #233a95;
+  font-size: 14px;
+  padding: 12px 25px;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 600;
+
+}
+footer{
+  width:100%;
+  height:500px;
+  margin:auto;
+  background: #fff;
+  padding: 25px 0px;
+
+}
+footer .topInfo{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+footer .topInfo .col{
+  padding:10px 15px;
+  padding-left: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+footer .topInfo .col:last-child{
+  border-right: 0px;;
+}
+footer .topInfo .col svg{
+  font-size: 26px;
+}
+
+footer .topInfo .col span{
+  font-size: 14px;
+  font-weight: 600;
+}
+footer .linksWrap h5{
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+footer .linksWrap ul li{
+  list-style: none;
+  margin-bottom: 10px;
+
+}
+footer .linksWrap ul li a{
+  color: #71778e;
+  font-size: 13px;
+}
+footer .linksWrap ul li a:hover{
+  text-decoration: none;
+}
+footer .copyright ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.2);
+}
+footer .copyright ul li a:hover{
+  background: #2bbef9;
+}
+footer .copyright ul li a svg{
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+
+}
+footer .copyright ul li a:hover svg{
+  color:#fff;
 }
