@@ -14,7 +14,6 @@ import HomeCat from "./HomeCat";
 import banner4 from '../assets/images/Banner-4.jpg';
 import banner3 from '../assets/images/Banner-3.jpg';
 import coupon from '../assets/images/coupon.png';
-import Footer from "../Components/Footer/footer";
 
 const Home = () => {
 
